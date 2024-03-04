@@ -21,46 +21,33 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Inventory API
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+This Inventory API project is a RESTful API designed to facilitate the management of inventory data. It provides endpoints for creating, retrieving, updating, and deleting inventory items, allowing users to perform CRUD (Create, Read, Update, Delete) operations on their inventory data programmatically.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+The API offers functionality to:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Create new inventory items with details such as name, description, quantity, and price.
 
-## Laravel Sponsors
+![Screenshot 2024-03-04 at 12 57 12 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/7c5b9c8b-8e12-4940-bae8-ad58025099fc)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- Retrieve a list of all inventory items
 
-### Premium Partners
+![Screenshot 2024-03-04 at 12 55 05 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/e4aeff04-6b7c-43a3-ae2d-40617be87e10)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+- Fetch specific items by their unique identifiers.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+![Screenshot 2024-03-04 at 12 55 39 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/08666c73-180b-4249-89fc-fe6b4d35f756)
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Update existing inventory items to reflect changes in quantity.
 
-## Security Vulnerabilities
+![Screenshot 2024-03-04 at 12 58 03 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/1f711fc1-ebe1-476b-b785-ffa6c17e4469)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+- Delete unwanted inventory items from the database.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![Screenshot 2024-03-04 at 12 58 58 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/3a8ed70d-6c29-4946-820c-56c44444cd52)
+
+
