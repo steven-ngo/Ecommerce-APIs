@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ShipmentController;
 
 
 /*
@@ -17,22 +19,47 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::group([
-    'namespace'  => 'api'
-], function (Router $router) {
-
-    // Retrieve all inventories
-    $router->get('/inventories', [ProductController::class, 'index']);
+Route::controller(ProductController::class)->group(function () {
+    // Retrieve all products
+    Route::get('/products', 'index');
 
     // Retrieve a specific product's inventory by ID
-    $router->get('/inventories/{productId}', [ProductController::class, 'show']);
+    Route::get('/products/{productId}', 'show');
 
     // Create a new product
-    $router->post('/products', [ProductController::class, 'store']);
+    Route::post('/products', 'store');
 
     // Update quantity of an existing item by ID
-    $router->put('/inventories', [ProductController::class, 'update']);
+    Route::put('/products', 'update');
 
     // Delete an product by ID
-    $router->delete('/products/{productId}', [ProductController::class, 'destroy']);
+    Route::delete('/products/{productId}', 'destroy');
+});
+
+Route::controller(OrderController::class)->group(function () {
+    // Retrieve all inventories
+    Route::get('/orders', 'index');
+
+    // Retrieve a specific product's inventory by ID
+    Route::get('/orders/{orderId}', 'show');
+
+    // Create a new product
+    Route::post('/orders', 'store');
+
+    // Update quantity of an existing item by ID
+    Route::put('/orders', 'update');
+});
+
+Route::controller(ShipmentController::class)->group(function () {
+    // Retrieve all inventories
+    Route::get('/shipments', 'index');
+
+    // Retrieve a specific product's inventory by ID
+    Route::get('/shipments/{shipmentId}', 'show');
+
+    // Create a new product
+    Route::post('/shipments', 'store');
+
+    // Update quantity of an existing item by ID
+    Route::put('/shipments', 'update');
 });

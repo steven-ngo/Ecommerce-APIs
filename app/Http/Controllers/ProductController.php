@@ -53,11 +53,49 @@ final class ProductController extends Controller
     {
         // Retrieve all items
         $products = DB::table('products')
-            ->select('inventories.id', 'products.name AS ProductName', 'products.description AS ProductDescription', 'categories.name AS categoryName', 'unit_price', 'warehouses.name AS warehouseName', 'quantity', 'active')
+            ->select(
+                'products.id AS product_id',
+                'products.name AS product_name',
+                'products.description AS product_description',
+                'inventories.id AS inventory_id',
+                'categories.name AS category_name',
+                'categories.id  AS category_id',
+                'categories.description AS category_description',
+                'warehouses.name AS warehouse_name',
+                'warehouses.id AS warehouse_id',
+                'warehouses.*',
+                'categories.*',
+                'inventories.*',
+                'products.*',
+            )
             ->join('categories', 'categories.id', '=', 'products.category_id')
             ->join('inventories', 'inventories.product_id', '=', 'products.id')
             ->join('warehouses', 'warehouses.id', '=', 'inventories.warehouse_id')
-            ->get()->toArray();
+            ->get()->map(function ($item) {
+                return [
+                    'product_id' => $item->product_id,
+                    'product_name' => $item->product_name,
+                    'product_description' => $item->product_description,
+                    'unit_price' => $item->unit_price,
+                    'quantity' => $item->quantity,
+                    'active' => $item->active,
+                    'created_at' => $item->created_at,
+                    'category' => [
+                        'category_id' => $item->category_id,
+                        'category_name' => $item->category_name,
+                        'category_description' => $item->category_description,
+                    ],
+                    'warehouse' => [
+                        'warehouse_id' => $item->warehouse_id,
+                        'warehouse_name' => $item->warehouse_name,
+                        'category_description' => $item->category_description,
+                        'contact_person' => $item->contact_person,
+                        'email' => $item->email,
+                        'phone' => $item->phone,
+                        'address' => $item->address,
+                    ],
+                ];
+            })->toArray();
 
         // Return response
         return response()->json(['data' => $products], 200);
@@ -73,12 +111,50 @@ final class ProductController extends Controller
         }
 
         $products = DB::table('products')
-            ->select('inventories.id', 'products.name AS ProductName', 'products.description AS ProductDescription', 'categories.name AS categoryName', 'unit_price', 'warehouses.name AS warehouseName', 'quantity', 'active')
+            ->select(
+                'products.id AS product_id',
+                'products.name AS product_name',
+                'products.description AS product_description',
+                'inventories.id AS inventory_id',
+                'categories.name AS category_name',
+                'categories.id  AS category_id',
+                'categories.description AS category_description',
+                'warehouses.name AS warehouse_name',
+                'warehouses.id AS warehouse_id',
+                'warehouses.*',
+                'categories.*',
+                'inventories.*',
+                'products.*',
+            )
             ->join('categories', 'categories.id', '=', 'products.category_id')
             ->join('inventories', 'inventories.product_id', '=', 'products.id')
             ->join('warehouses', 'warehouses.id', '=', 'inventories.warehouse_id')
             ->where('products.id', '=', $productId)
-            ->get()->toArray();
+            ->get()->map(function ($item) {
+                return [
+                    'product_id' => $item->product_id,
+                    'product_name' => $item->product_name,
+                    'product_description' => $item->product_description,
+                    'unit_price' => $item->unit_price,
+                    'quantity' => $item->quantity,
+                    'active' => $item->active,
+                    'created_at' => $item->created_at,
+                    'category' => [
+                        'category_id' => $item->category_id,
+                        'category_name' => $item->category_name,
+                        'category_description' => $item->category_description,
+                    ],
+                    'warehouse' => [
+                        'warehouse_id' => $item->warehouse_id,
+                        'warehouse_name' => $item->warehouse_name,
+                        'category_description' => $item->category_description,
+                        'contact_person' => $item->contact_person,
+                        'email' => $item->email,
+                        'phone' => $item->phone,
+                        'address' => $item->address,
+                    ],
+                ];
+            })->toArray();
 
         // Return response
         return response()->json(['data' => $products], 200);
@@ -89,18 +165,25 @@ final class ProductController extends Controller
     {
         // Validate request data
         $validatedData = $request->validate([
-            'id' => 'required|exists:inventories,id',
+            'product_id' => 'required|exists:inventories,id',
+            'warehouse_id' => 'required|exists:warehouses,id',
             'quantity' => 'required|integer'
         ]);
 
-        $inventory = DB::table('inventories')->find($validatedData['id']);
+        $inventory = DB::table('inventories')->where([
+            ['product_id', '=', $validatedData['product_id']],
+            ['warehouse_id', '=', $validatedData['warehouse_id']]
+        ])->get();
 
-        if (!$inventory) {
+        if ($inventory->isEmpty()) {
             return response()->json(['message' => 'the id is not matched'], 404);
         }
 
-        $products = DB::table('inventories')
-            ->where('id', '=', $validatedData['id'])
+        DB::table('inventories')
+            ->where([
+                ['product_id', '=', $validatedData['product_id']],
+                ['warehouse_id', '=', $validatedData['warehouse_id']]
+            ])
             ->update(['quantity' => $validatedData['quantity']]);
 
         // Return response
