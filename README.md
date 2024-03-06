@@ -23,27 +23,31 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Inventory API
 
-
 This Inventory API project is a RESTful API designed to facilitate the management of inventory data. It provides endpoints for creating, retrieving, updating, and deleting inventory items, allowing users to perform CRUD (Create, Read, Update, Delete) operations on their inventory data programmatically.
 
 The API offers functionality to:
 
 - Create new inventory items with details such as name, description, quantity, and price.
 
-![alt text](<Screenshot 2024-03-04 at 12.57.12 AM.png>)
+![Screenshot 2024-03-04 at 12 57 12 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/7c5b9c8b-8e12-4940-bae8-ad58025099fc)
 
 - Retrieve a list of all inventory items
-![alt text](<Screenshot 2024-03-04 at 12.55.05 AM.png>)
+
+![Screenshot 2024-03-04 at 12 55 05 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/e4aeff04-6b7c-43a3-ae2d-40617be87e10)
+
 
 - Fetch specific items by their unique identifiers.
 
-![alt text](<Screenshot 2024-03-04 at 12.55.39 AM.png>)
+![Screenshot 2024-03-04 at 12 55 39 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/08666c73-180b-4249-89fc-fe6b4d35f756)
+
 
 - Update existing inventory items to reflect changes in quantity.
 
-![alt text](<Screenshot 2024-03-04 at 12.58.03 AM.png>)
+![Screenshot 2024-03-04 at 12 58 03 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/1f711fc1-ebe1-476b-b785-ffa6c17e4469)
+
 
 - Delete unwanted inventory items from the database.
 
-![alt text](<Screenshot 2024-03-04 at 12.58.58 AM.png>)
+![Screenshot 2024-03-04 at 12 58 58 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/3a8ed70d-6c29-4946-820c-56c44444cd52)
+
 
