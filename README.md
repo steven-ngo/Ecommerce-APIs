@@ -21,33 +21,83 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Inventory API
+## E-commerce APIs
 
-This Inventory API project is a RESTful API designed to facilitate the management of inventory data. It provides endpoints for creating, retrieving, updating, and deleting inventory items, allowing users to perform CRUD (Create, Read, Update, Delete) operations on their inventory data programmatically.
+The E-commerce APIs project offers simple and efficient RESTful APIs for managing orders, products, and shipments. These APIs interact with databases, allowing users to create, retrieve, update, and delete orders, products, and shipments.
 
-The API offers functionality to:
+The APIs offer functionalities to:
 
-- Create new inventory items with details such as name, description, quantity, and price.
+#### Product Endpoints
 
-![Screenshot 2024-03-04 at 12 57 12 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/7c5b9c8b-8e12-4940-bae8-ad58025099fc)
+- Create a new product with details such as name, description, quantity, and price.
 
-- Retrieve a list of all inventory items
-
-![Screenshot 2024-03-04 at 12 55 05 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/e4aeff04-6b7c-43a3-ae2d-40617be87e10)
+![Screenshot 2024-03-09 at 7 18 13 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/32f22092-2153-4984-9a91-6e292caece9b)
 
 
-- Fetch specific items by their unique identifiers.
+- Retrieve a list of all products
 
-![Screenshot 2024-03-04 at 12 55 39 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/08666c73-180b-4249-89fc-fe6b4d35f756)
-
-
-- Update existing inventory items to reflect changes in quantity.
-
-![Screenshot 2024-03-04 at 12 58 03 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/1f711fc1-ebe1-476b-b785-ffa6c17e4469)
+![Screenshot 2024-03-09 at 7 19 15 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/b712c6ec-0d1b-43b5-aa25-c6177dab07d7)
 
 
-- Delete unwanted inventory items from the database.
 
-![Screenshot 2024-03-04 at 12 58 58 AM](https://github.com/steven-ngo/Inventory-API/assets/162012256/3a8ed70d-6c29-4946-820c-56c44444cd52)
+- Fetch a specific product by its ID.
 
+![Screenshot 2024-03-09 at 7 20 28 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/4e558447-543e-453b-8a7a-25fd503bb855)
+
+
+
+- Update an existing product to reflect changes in quantity.
+
+![Screenshot 2024-03-09 at 7 21 11 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/9a13cb77-ef36-45fc-925e-7de9d6236e01)
+
+
+
+- Delete an unwanted product from the database.
+
+![Screenshot 2024-03-09 at 7 21 36 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/4f2b45f5-9541-488f-9c90-3638df421c11)
+
+#### Order Endpoints
+
+- Create a new order with details such as PO, product, and quantity.
+  
+![Screenshot 2024-03-09 at 7 37 24 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/1b605234-cfb5-4aa3-837c-704b3679bd1f)
+
+  
+- Retrieve a list of all orders.
+  
+  ![Screenshot 2024-03-09 at 7 37 47 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/d43bbb8d-6661-482c-941f-98fa2f72b3cf)
+
+- Fetch a specific order by its ID.
+
+![Screenshot 2024-03-09 at 7 38 08 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/8579dcdc-ae59-479e-9836-abdcbc6a6597)
+
+  
+- Update the status of an existing order.
+  
+![Screenshot 2024-03-09 at 7 38 39 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/d3e8148d-0402-4bbc-9cfc-2e69361f84ff)
+  
+
+#### Shipment Endpoints
+
+- Create a new shipment with details such as the shipment's status and carrier.
+
+![Screenshot 2024-03-09 at 7 44 16 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/11188a11-25b7-41b6-8a24-92360320b2f6)
+
+
+- Retrieve a list of all shipments.
+
+![Screenshot 2024-03-09 at 7 44 38 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/ecb5c806-6a36-435f-be3a-04a19a403e2f)
+
+
+- Fetch a specific shipment by its ID.
+
+![Screenshot 2024-03-09 at 7 44 54 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/517a46e9-7c5a-4eae-ae6f-62224b326b69)
+
+
+- Update the status of an existing shipment.
+
+![Screenshot 2024-03-09 at 7 45 10 PM](https://github.com/steven-ngo/Ecommerce-APIs/assets/162012256/31e0a035-7d48-4e70-8c3f-f58760595144)
+
+
+  
 
